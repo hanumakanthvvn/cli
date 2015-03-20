@@ -3,6 +3,8 @@ package api
 import (
 	"errors"
 	"io/ioutil"
+	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 )
@@ -17,6 +19,7 @@ var (
 type Iteration struct {
 	Key      string            `json:"key"`
 	Code     string            `json:"code"`
+	TestAnalysis 	 string		   `json:"test_analysis"`
 	Dir      string            `json:"dir"`
 	Language string            `json:"language"`
 	Problem  string            `json:"problem"`
@@ -51,6 +54,17 @@ func NewIteration(dir string, filenames []string) (*Iteration, error) {
 	}
 	iter.Language = segments[1]
 	iter.Problem = segments[2]
+
+	// Run tests and write to out file
+	runTestCmd := exec.Command("rake")
+	testOutfile, _ := os.Create("./test_out.txt")
+	defer testOutfile.Close()
+	runTestCmd.Stdout = testOutfile
+	runTestCmd.Run()
+
+	// add the test out put to iteration
+	testOutput, _ := ioutil.ReadFile("./test_out.txt")
+	iter.TestAnalysis = string(testOutput)
 
 	for _, filename := range filenames {
 		b, err := ioutil.ReadFile(filename)
