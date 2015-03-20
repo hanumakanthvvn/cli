@@ -16,7 +16,7 @@ const (
 	// We try to follow Semantic Versioning (http://semver.org),
 	// but with the http://exercism.io app being a prototype, a
 	// lot of things get out of hand.
-	Version = "2.0.0"
+	Version = "2.0.0-rc.1"
 
 	descDebug     = "Outputs useful debug information."
 	descConfigure = "Writes config values to a JSON file."
@@ -37,6 +37,7 @@ func main() {
 	api.UserAgent = fmt.Sprintf("github.com/exercism/cli v%s (%s/%s)", Version, runtime.GOOS, runtime.GOARCH)
 
 	app := cli.NewApp()
+	app.EnableBashCompletion = true
 	app.Name = "exercism"
 	app.Usage = "A command line tool to interact with http://exercism.io"
 	app.Version = Version
@@ -95,6 +96,15 @@ func main() {
 			ShortName: "f",
 			Usage:     descFetch,
 			Action:    cmd.Fetch,
+			BashComplete: func(c *cli.Context) {
+			  if len(c.Args()) == 0 {
+	      		    fmt.Println("java node-js ruby python")
+	                  }
+
+	          	  if len(c.Args()) == 1{
+		      	    fmt.Println("hamming leap bob gigasecond ")
+	                  }
+			},
 		},
 		{
 			Name:        "restore",
