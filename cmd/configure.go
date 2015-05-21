@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/codegangsta/cli"
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 )
 
 // Configure stores settings in a JSON file.

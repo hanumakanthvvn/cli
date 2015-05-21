@@ -6,7 +6,7 @@ import (
 
 	"github.com/codegangsta/cli"
 	"github.com/exercism/cli/api"
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 )
 
 const msgExplainFetch = "In order to fetch a specific assignment, call the fetch command with a specific assignment.\n\nexercism fetch ruby matrix"

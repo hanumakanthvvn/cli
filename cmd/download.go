@@ -9,7 +9,7 @@ import (
 
 	"github.com/codegangsta/cli"
 	"github.com/exercism/cli/api"
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 )
 
 // Download returns specified submissions and related problem.

@@ -8,7 +8,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 	"github.com/stretchr/testify/assert"
 )
 

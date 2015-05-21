@@ -6,7 +6,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 )
 
 var (

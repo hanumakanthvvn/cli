@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/codegangsta/cli"
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 )
 
 // Debug provides information about the user's environment and configuration.

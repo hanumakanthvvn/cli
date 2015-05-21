@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/exercism/cli/api"
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 )
 
 func TestItemReport(t *testing.T) {

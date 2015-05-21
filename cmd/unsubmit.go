@@ -6,7 +6,7 @@ import (
 
 	"github.com/codegangsta/cli"
 	"github.com/exercism/cli/api"
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 )
 
 // Unsubmit deletes an iteration from the api.

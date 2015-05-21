@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/exercism/cli/api"
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 )
 
 // HWFilter is used to categorize homework items.
