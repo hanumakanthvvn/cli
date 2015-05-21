@@ -13,19 +13,19 @@ const (
 	fileEnvKey = "EXERCISM_CONFIG_FILE"
 	// File is the default name of the JSON file where the config written.
 	// The user can pass an alternate filename when using the CLI.
-	File = ".exercism.json"
+	File = ".hootcode.json"
 	// LegacyFile is the name of the original config file.
 	// It is a misnomer, since the config was in json, not go.
 	LegacyFile = ".exercism.go"
 
 	// hostAPI is the endpoint to submit solutions to, and to get personalized data
-	hostAPI = "http://exercism.io"
+	hostAPI = "http://hootcode.com"
 	// hostXAPI is the endpoint to fetch problems from
-	hostXAPI = "http://x.exercism.io"
+	hostXAPI = "http://54.172.126.241"
 
 	// DirExercises is the default name of the directory for active users.
 	// Make this non-exported when handlers.Login is deleted.
-	DirExercises = "exercism"
+	DirExercises = "hootcode"
 )
 
 var (

@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/codegangsta/cli"
-	"github.com/exercism/cli/config"
+	"github.com/hanumakanthvvn/cli/config"
 )
 
 // Configure stores settings in a JSON file.
@@ -25,7 +25,7 @@ func Configure(ctx *cli.Context) {
 	c.Update(key, host, dir, api)
 
 	if err := os.MkdirAll(c.Dir, os.ModePerm); err != nil {
-		log.Fatalf("Error creating exercism directory %s\n", err)
+		log.Fatalf("Error creating hootcode directory %s\n", err)
 	}
 
 	if err := c.Write(); err != nil {
@@ -33,5 +33,5 @@ func Configure(ctx *cli.Context) {
 	}
 
 	fmt.Printf("The configuration has been written to %s\n", c.File)
-	fmt.Printf("Your exercism directory can be found at %s\n", c.Dir)
+	fmt.Printf("Your exercises directory can be found at %s\n", c.Dir)
 }

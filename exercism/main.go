@@ -21,8 +21,8 @@ const (
 	descDebug     = "Outputs useful debug information."
 	descConfigure = "Writes config values to a JSON file."
 	descDemo      = "Fetches a demo problem for each language track on exercism.io."
-	descFetch     = "Fetches your current problems on exercism.io, as well as the next unstarted problem in each language."
-	descRestore   = "Restores completed and current problems on from exercism.io, along with your most recent iteration for each."
+	descFetch     = "Fetches your current problems on hootcode.com, as well as the next unstarted problem in each language."
+	descRestore   = "Restores completed and current problems on from hootcode.com, along with your most recent iteration for each."
 	descSubmit    = "Submits a new iteration to a problem on exercism.io."
 	descUnsubmit  = "Deletes the most recently submitted iteration."
 	descTracks    = "List the available language tracks"
@@ -38,8 +38,8 @@ func main() {
 
 	app := cli.NewApp()
 	app.EnableBashCompletion = true
-	app.Name = "exercism"
-	app.Usage = "A command line tool to interact with http://exercism.io"
+	app.Name = "hootcode"
+	app.Usage = "A command line tool to interact with http://hootcode.com"
 	app.Version = Version
 	app.HideVersion = true
 	app.Flags = []cli.Flag{
@@ -72,11 +72,11 @@ func main() {
 				},
 				cli.StringFlag{
 					Name:  "host, u",
-					Usage: "exercism api host",
+					Usage: "hootcode api host",
 				},
 				cli.StringFlag{
 					Name:  "key, k",
-					Usage: "exercism.io API key (see http://exercism.io/account)",
+					Usage: "Hootcode API key (see http://hootcode.com/account)",
 				},
 				cli.StringFlag{
 					Name:  "api, a",
