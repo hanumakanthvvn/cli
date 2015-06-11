@@ -7,8 +7,8 @@ import (
 	"runtime"
 
 	"github.com/codegangsta/cli"
-	"github.com/exercism/cli/api"
-	"github.com/exercism/cli/cmd"
+	"github.com/hanumakanthvvn/cli/api"
+	"github.com/hanumakanthvvn/cli/cmd"
 )
 
 const (

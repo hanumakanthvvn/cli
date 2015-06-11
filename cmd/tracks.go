@@ -5,9 +5,9 @@ import (
 	"log"
 
 	"github.com/codegangsta/cli"
-	"github.com/exercism/cli/api"
+	"github.com/hanumakanthvvn/cli/api"
 	"github.com/hanumakanthvvn/cli/config"
-	"github.com/exercism/cli/user"
+	"github.com/hanumakanthvvn/cli/user"
 )
 
 // Tracks lists available tracks.
@@ -32,7 +32,7 @@ func Tracks(ctx *cli.Context) {
 	// TODO: implement `list` command to list problems in a track
 	msg := `
 Related commands:
-    exercism fetch (see 'exercism help fetch')
+    hootcode fetch (see 'hootcode help fetch')
 	`
 	fmt.Println(msg)
 }

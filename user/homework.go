@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/exercism/cli/api"
+	"github.com/hanumakanthvvn/cli/api"
 	"github.com/hanumakanthvvn/cli/config"
 )
 

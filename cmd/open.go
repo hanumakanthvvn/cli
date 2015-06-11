@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/codegangsta/cli"
-	"github.com/exercism/cli/api"
+	"github.com/hanumakanthvvn/cli/api"
 	"github.com/hanumakanthvvn/cli/config"
 )
 
@@ -20,7 +20,7 @@ func Open(ctx *cli.Context) {
 
 	args := ctx.Args()
 	if len(args) != 2 {
-		msg := "Usage: exercism open LANGUAGE EXERCISE"
+		msg := "Usage: hootcode open LANGUAGE EXERCISE"
 		log.Fatal(msg)
 	}
 

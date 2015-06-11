@@ -5,9 +5,9 @@ import (
 	"log"
 
 	"github.com/codegangsta/cli"
-	"github.com/exercism/cli/api"
+	"github.com/hanumakanthvvn/cli/api"
 	"github.com/hanumakanthvvn/cli/config"
-	"github.com/exercism/cli/user"
+	"github.com/hanumakanthvvn/cli/user"
 )
 
 // Demo returns one problem for each active track.

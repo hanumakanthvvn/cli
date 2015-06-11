@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	msgPleaseAuthenticate = "You must be authenticated. Run `exercism configure --key=YOUR_API_KEY`."
+	msgPleaseAuthenticate = "You must be authenticated. Run `hootcode configure --key=YOUR_API_KEY`."
 )
 
 func isTest(path string) bool {

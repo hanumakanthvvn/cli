@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 
 	"github.com/codegangsta/cli"
-	"github.com/exercism/cli/api"
+	"github.com/hanumakanthvvn/cli/api"
 	"github.com/hanumakanthvvn/cli/config"
 )
 
@@ -22,7 +22,7 @@ func Download(ctx *cli.Context) {
 
 	args := ctx.Args()
 	if len(args) != 1 {
-		msg := "Usage: exercism download SUBMISSION_ID"
+		msg := "Usage: hootcode download SUBMISSION_ID"
 		log.Fatal(msg)
 	}
 

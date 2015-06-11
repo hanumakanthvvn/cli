@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 
 	"github.com/codegangsta/cli"
-	"github.com/exercism/cli/api"
+	"github.com/hanumakanthvvn/cli/api"
 	"github.com/hanumakanthvvn/cli/config"
 )
 
@@ -92,7 +92,7 @@ func Submit(ctx *cli.Context) {
 Submitted %s in %s.
 Your submission can be found online at %s
 
-To get the next exercise, run "exercism fetch" again.
+To get the next exercise, run "hootcode fetch" again.
 `
 	fmt.Printf(msg, submission.Name, submission.Language, submission.URL)
 }
