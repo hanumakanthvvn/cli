@@ -87,3 +87,28 @@ func (iter *Iteration) isValidFilepath(path string) bool {
 	}
 	return strings.HasPrefix(strings.ToLower(path), strings.ToLower(iter.Dir))
 }
+
+func NewGitIteration(dir string, commit_id string) (*Iteration, error) {
+
+	iter := &Iteration{
+		Dir:      dir,
+		Solution: map[string]string{},
+	}
+
+	// Identify language track and problem slug.
+  path, _ := os.Getwd()
+	segments := strings.Split(path, "/")
+	if len(segments) < 4 {
+		return nil, errUnidentifiable
+	}
+	iter.Language = segments[4]
+	iter.Problem = segments[5]
+
+
+	iter.Solution["path"] = "git"
+	iter.Solution["code"] = commit_id
+	return iter, nil
+}
+
+
+
