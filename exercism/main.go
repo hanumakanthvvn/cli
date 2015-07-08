@@ -122,7 +122,7 @@ func main() {
 		},
 		{
 			Name:      "gsubmit",
-			ShortName: "s",
+			ShortName: "gs",
 			Usage:     descGsubmit,
 			Action:    cmd.GSubmit,
 		},
