@@ -24,7 +24,7 @@ const (
 	descFetch     = "Fetches your current problems on hootcode.com, as well as the next unstarted problem in each language."
 	descRestore   = "Restores completed and current problems on from hootcode.com, along with your most recent iteration for each."
 	descSubmit    = "Submits a new iteration to a problem on exercism.io."
-	descGsubmit   = "Submit from git."
+	descGsubmit   = "Submits a new iteration to a problem on hootcode using git commit sha."
 	descUnsubmit  = "Deletes the most recently submitted iteration."
 	descTracks    = "List the available language tracks"
 	descOpen      = "Opens the current submission of the specified exercise"
@@ -117,15 +117,15 @@ func main() {
 		{
 			Name:      "submit",
 			ShortName: "s",
-			Usage:     descSubmit,
-			Action:    cmd.Submit,
-		},
-		{
-			Name:      "gsubmit",
-			ShortName: "gs",
 			Usage:     descGsubmit,
 			Action:    cmd.GSubmit,
 		},
+		// {
+		// 	Name:      "gsubmit",
+		// 	ShortName: "gs",
+		// 	Usage:     descGsubmit,
+		// 	Action:    cmd.GSubmit,
+		// },
 		{
 			Name:      "unsubmit",
 			ShortName: "u",

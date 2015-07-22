@@ -7,6 +7,8 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strings"
+	"encoding/json"
+	"fmt"
 )
 
 var (
@@ -88,6 +90,11 @@ func (iter *Iteration) isValidFilepath(path string) bool {
 	return strings.HasPrefix(strings.ToLower(path), strings.ToLower(iter.Dir))
 }
 
+type ProblemInfo struct {
+    Language  string `json:"language"`
+    Name  string `json:"name"`
+  }
+
 func NewGitIteration(dir string, commit_id string) (*Iteration, error) {
 
 	iter := &Iteration{
@@ -97,13 +104,17 @@ func NewGitIteration(dir string, commit_id string) (*Iteration, error) {
 
 	// Identify language track and problem slug.
   path, _ := os.Getwd()
-	segments := strings.Split(path, "/")
-	if len(segments) < 4 {
-		return nil, errUnidentifiable
-	}
-	iter.Language = segments[4]
-	iter.Problem = segments[5]
+  file, e := ioutil.ReadFile(path+"/config.json")
+  if e != nil {
+      fmt.Printf("File error - conifg.json should present in the solution directory to submit the solution ex: {'language': 'java', 'name': 'web-crawler'} %v\n", e)
+      os.Exit(1)
+  }
 
+  var problemInfo ProblemInfo
+  json.Unmarshal(file, &problemInfo)
+
+  iter.Language = problemInfo.Language
+	iter.Problem = problemInfo.Name
 
 	iter.Solution["path"] = "git"
 	iter.Solution["code"] = commit_id
