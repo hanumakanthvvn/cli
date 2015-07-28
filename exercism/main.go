@@ -20,17 +20,17 @@ const (
 
 	descDebug     = "Outputs useful debug information."
 	descConfigure = "Writes config values to a JSON file."
-	descDemo      = "Fetches a demo problem for each language track on exercism.io."
+	//descDemo      = "Fetches a demo problem for each language track on exercism.io."
 	descFetch     = "Fetches your current problems on hootcode.com, as well as the next unstarted problem in each language."
-	descRestore   = "Restores completed and current problems on from hootcode.com, along with your most recent iteration for each."
+	//descRestore   = "Restores completed and current problems on from hootcode.com, along with your most recent iteration for each."
 	descSubmit    = "Submits a new iteration to a problem on exercism.io."
 	descGsubmit   = "Submit from git."
-	descUnsubmit  = "Deletes the most recently submitted iteration."
+	//descUnsubmit  = "Deletes the most recently submitted iteration."
 	descTracks    = "List the available language tracks"
-	descOpen      = "Opens the current submission of the specified exercise"
+	//descOpen      = "Opens the current submission of the specified exercise"
 
-	descLongRestore = "Restore will pull the latest revisions of exercises that have already been submitted. It will *not* overwrite existing files. If you have made changes to a file and have not submitted it, and you're trying to restore the last submitted version, first move that file out of the way, then call restore."
-	descDownload    = "Downloads and saves a specified submission into the local system"
+	//descLongRestore = "Restore will pull the latest revisions of exercises that have already been submitted. It will *not* overwrite existing files. If you have made changes to a file and have not submitted it, and you're trying to restore the last submitted version, first move that file out of the way, then call restore."
+	//descDownload    = "Downloads and saves a specified submission into the local system"
 	descList        = "Lists all available assignments for a given language"
 )
 
@@ -81,17 +81,17 @@ func main() {
 				},
 				cli.StringFlag{
 					Name:  "api, a",
-					Usage: "exercism xapi host",
+					Usage: "hootcode xapi host",
 				},
 			},
 			Action: cmd.Configure,
 		},
-		{
-			Name:      "demo",
-			ShortName: "d",
-			Usage:     descDemo,
-			Action:    cmd.Demo,
-		},
+		// {
+		// 	Name:      "demo",
+		// 	ShortName: "d",
+		// 	Usage:     descDemo,
+		// 	Action:    cmd.Demo,
+		// },
 		{
 			Name:      "fetch",
 			ShortName: "f",
@@ -107,13 +107,13 @@ func main() {
 	                  }
 			},
 		},
-		{
-			Name:        "restore",
-			ShortName:   "r",
-			Usage:       descRestore,
-			Description: descLongRestore,
-			Action:      cmd.Restore,
-		},
+		// {
+		// 	Name:        "restore",
+		// 	ShortName:   "r",
+		// 	Usage:       descRestore,
+		// 	Description: descLongRestore,
+		// 	Action:      cmd.Restore,
+		// },
 		{
 			Name:      "submit",
 			ShortName: "s",
@@ -126,30 +126,30 @@ func main() {
 			Usage:     descGsubmit,
 			Action:    cmd.GSubmit,
 		},
-		{
-			Name:      "unsubmit",
-			ShortName: "u",
-			Usage:     descUnsubmit,
-			Action:    cmd.Unsubmit,
-		},
+		// {
+		// 	Name:      "unsubmit",
+		// 	ShortName: "u",
+		// 	Usage:     descUnsubmit,
+		// 	Action:    cmd.Unsubmit,
+		// },
 		{
 			Name:      "tracks",
 			ShortName: "t",
 			Usage:     descTracks,
 			Action:    cmd.Tracks,
 		},
-		{
-			Name:      "open",
-			ShortName: "op",
-			Usage:     descOpen,
-			Action:    cmd.Open,
-		},
-		{
-			Name:      "download",
-			ShortName: "dl",
-			Usage:     descDownload,
-			Action:    cmd.Download,
-		},
+		// {
+		// 	Name:      "open",
+		// 	ShortName: "op",
+		// 	Usage:     descOpen,
+		// 	Action:    cmd.Open,
+		// },
+		// {
+		// 	Name:      "download",
+		// 	ShortName: "dl",
+		// 	Usage:     descDownload,
+		// 	Action:    cmd.Download,
+		// },
 		{
 			Name:      "list",
 			ShortName: "li",

@@ -7,11 +7,13 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strings"
+	"log"
 )
 
 var (
 	errUnidentifiable = errors.New("unable to identify track and problem")
-	errNoFiles        = errors.New("no files submitted")
+	errBaseDir = errors.New("submission should be done from hootcode problem directory i.e hootcode/language/problem/ ")
+	errNoFiles = errors.New("no files submitted")
 )
 
 // Iteration represents a version of a particular exercise.
@@ -95,12 +97,20 @@ func NewGitIteration(dir string, commit_id string) (*Iteration, error) {
 		Solution: map[string]string{},
 	}
 
-	// Identify language track and problem slug.
+
   path, _ := os.Getwd()
+
+  // All the files should be within the exercism path.
+  if !iter.isValidFilepath(path) {
+			return nil, errBaseDir
+	}
+
+  // Identify language track and problem slug.
 	segments := strings.Split(path, "/")
 	if len(segments) < 4 {
 		return nil, errUnidentifiable
 	}
+  log.Fatalf("unable to submit: %s", errUnidentifiable)
 	iter.Language = segments[4]
 	iter.Problem = segments[5]
 
