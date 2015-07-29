@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strings"
-	"log"
+	//"log"
 )
 
 var (
@@ -107,10 +107,10 @@ func NewGitIteration(dir string, commit_id string) (*Iteration, error) {
 
   // Identify language track and problem slug.
 	segments := strings.Split(path, "/")
-	if len(segments) < 4 {
+	if len(segments) <= 5 {
 		return nil, errUnidentifiable
+  		//log.Fatalf("unable to submit: %s", errUnidentifiable)
 	}
-  log.Fatalf("unable to submit: %s", errUnidentifiable)
 	iter.Language = segments[4]
 	iter.Problem = segments[5]
 
